@@ -5,6 +5,8 @@ import { preview } from "../assets";
 import { getRandomPrompt } from "../utils";
 import FormField from "../components/FormField";
 import Spinner from "../components/Spinner";
+// const BASE_URL = process.env.BASE_URL;
+
 function CreatePost({ theme }) {
   const navigate = useNavigate();
   const [form, setform] = useState({
@@ -19,7 +21,7 @@ function CreatePost({ theme }) {
     if (form.prompt && form.name && form.photo) {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:8080/api/v1/post", {
+        const response = await fetch(`http://localhost:8080/api/v1/post`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { download } from "../assets";
 import { downloadImage } from "../utils";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
+// const BASE_URL = process.env.BASE_URL;
+import { Link } from "react-router-dom";
 function Card({ _id, name, prompt, photo }) {
   const navigate = useNavigate;
   const deletePost = async (id) => {
@@ -15,13 +17,16 @@ function Card({ _id, name, prompt, photo }) {
       window.location.reload();
     }
   };
+  const [postId, setPostId] = useState("");
   return (
     <div className="rounded-xl group relative shadow-card hover:shadow-cardhover card">
-      <img
-        src={photo}
-        className="w-full h-auto object-cover rounded-xl"
-        alt={prompt}
-      />
+      <Link to={`/single/${_id}`}>
+        <img
+          src={photo}
+          className="w-full h-auto object-cover rounded-xl"
+          alt={prompt}
+        />
+      </Link>
       <div className="group-hover:flex overflow-y-auto flex-col max-h-[94.5%] hidden absolute bottom-0 left-0 right-0 bg-[#10131f] rounded-md m-2 p-4 text-white">
         <h3>What is this about?</h3>
         {prompt}

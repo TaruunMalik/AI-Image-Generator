@@ -1,0 +1,9 @@
+.contOne {
+  background-image: url("../assets/pexels-cottonbro-studio-6153354.jpg");
+  background-size: cover;
+}
+.formCont {
+  background-color: #ffffff;
+  box-shadow: "0 0 1px 0 rgba(189,192,207,0.06),0 10px 16px -1px rgba(189,192,207,0.2)";
+  border-radius: 1rem;
+}

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Spinner from "../components/Spinner";
 import FormField from "../components/FormField";
 import Card from "../components/Card";
+import * as dotenv from "dotenv";
 
 const RenderCards = ({ data, title }) => {
   if (data?.length > 0) {
